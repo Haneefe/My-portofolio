@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion as m} from "framer-motion";
 const NavBar = () => {
   const [hamCLick, setHamClick] = useState(false);
   const [color, setColor] = useState(false);
@@ -9,6 +10,9 @@ const NavBar = () => {
     setHamClick(!hamCLick);
     //
   };
+  const resumeDownloadHandler=(url)=>{
+
+  }
   const changeColor = () => {
     //
     if (window.scrollY >= 100) {
@@ -24,7 +28,7 @@ const NavBar = () => {
         <h1>Portofolio</h1>
       </Link>
 
-      <ul className={!hamCLick ? "navMenu" : "navMenu active"}>
+      <m.ul className={!hamCLick ? "navMenu" : "navMenu active"}>
         {/* <ul activeClassName={styles["navMenu"]}> */}
         <li>
           <Link to="/">
@@ -46,7 +50,8 @@ const NavBar = () => {
             <h1>Contact</h1>
           </Link>
         </li>
-      </ul>
+        
+      </m.ul>
       <div className="hamburger" onClick={handleHamCLick}>
         {hamCLick ? (
           <FaTimes size={20} style={{ color: "#fff" }} />

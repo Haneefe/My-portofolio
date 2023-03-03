@@ -1,9 +1,9 @@
 import React from "react";
 import "./Work.css";
-import proj1 from "../assets/project1.png";
 
 import { Link } from "react-router-dom";
 const WorkCard = (props) => {
+  console.log(props)
   return (
     <div className="project-card">
       <img src={props.imgsrc} alt="immage" />
@@ -11,12 +11,14 @@ const WorkCard = (props) => {
       <div className="pro-details">
         <p>{props.text}</p>
         <div className="pro-btns">
-          <Link to={props.view} className="btn">
+          {/* <Link to={{pathname:props.view}} target="_blank" className="btn">
             View
-          </Link>
-          <Link to="url.com" className="btn">
+          </Link> */}
+          <a className="btn" href={props.view} target="_blank">VIEW</a>
+          <a className="btn" href={props.source} target="_blank">SOURCE</a>
+          {/* <Link to="url.com" className="btn">
             Source
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
