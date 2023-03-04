@@ -1,12 +1,11 @@
 import React from "react";
 import "./Work.css";
-
-import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const WorkCard = (props) => {
   console.log(props)
   return (
     <div className="project-card">
-      <img src={props.imgsrc} alt="immage" />
+      <LazyLoadImage src={props.imgsrc} placeholderSrc={props.placeholder} alt="immage" />
       <h2 className="project-title">{props.title}</h2>
       <div className="pro-details">
         <p>{props.text}</p>

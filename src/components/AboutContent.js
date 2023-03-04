@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./AboutContent.css";
 import React1 from "../assets/react1.jpg";
 import React2 from "../assets/react2.webp";
+import React1placeholder from "../assets/react1-placeholder.webp";
+import React2placeholder from "../assets/react2-placeholder.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const AboutContent = () => {
   //
@@ -21,10 +24,10 @@ const AboutContent = () => {
       <div className="right">
         <div className="img-container">
           <div className="img-stack top">
-            <img className="img" src={React1} alt="alt" />
+            <LazyLoadImage className="img" src={React1} placeholderSrc={React1placeholder} alt="alt" />
           </div>
           <div className="img-stack bottom">
-            <img className="img" src={React2} alt="alt" />
+            <LazyLoadImage className="img" src={React2} placeholderSrc={React2placeholder} alt="alt" />
           </div>
         </div>
       </div>

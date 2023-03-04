@@ -1,15 +1,16 @@
 import React from "react";
 import "./Heroimg.css";
 import IntroImg from "../assets/intro-bg.jpg";
+import IntroImgPlaceHolder from "../assets/intro-bg-placeholder.webp";
 import { Link } from "react-router-dom";
-import download from "../assets/downloadicon.png"
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const Heroimg = () => {
   //
 
   return (
     <div className="hero">
       <div className="mask">
-        <img className="into-img" src={IntroImg} alt="IntroImg" />
+        <LazyLoadImage className="into-img" src={IntroImg} alt="IntroImg" placeholderSrc={IntroImgPlaceHolder} height={"100%"} width={"100%"}/>
       </div>
       <div className="content">
         <p>Hi,I'M Haneef</p>
@@ -21,9 +22,6 @@ const Heroimg = () => {
           <a href="Haneef resume 2023.pdf" download="Haneef resume 2023.pdf" className="btn btn-light">
             Resume
             </a>
-          {/* <Link to="/contact" hr className="btn btn-light">
-           Contact
-          </Link> */}
         </div>
       </div>
     </div>
